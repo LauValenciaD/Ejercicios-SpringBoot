@@ -5526,3 +5526,97 @@ java.io.FileNotFoundException: C:\Users\lvalencia5049\Documents\workspace-spring
 2025-01-17 14:03:01,481 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-01-17 14:03:01,484 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-01-17 14:03:01,486 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Laura\Documents\workspace-spring-tool-suite-4-4.26.0.RELEASE\Ejercicios-SpringBoot\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:17:03,754 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-01-17 15:18:09,300 [Worker-8: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ejercicioBBDD-2:0.0.1-SNAPSHOT @ C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\pom.xml.
+2025-01-17 15:18:11,205 [Worker-1: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ejercicioBBDD-2:0.0.1-SNAPSHOT @ C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\pom.xml.
+2025-01-17 15:18:15,668 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:18:15,682 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:18:15,688 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:18:17,022 [Worker-2: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ejercicioBBDD-2:0.0.1-SNAPSHOT @ C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\pom.xml.
+2025-01-17 15:54:03,539 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:54:03,551 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:54:03,555 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:57:20,181 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:57:20,185 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:57:20,187 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:57:24,407 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:57:24,410 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:57:24,413 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:57:51,785 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:57:51,789 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:57:51,791 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:58:14,469 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:58:14,472 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:58:14,474 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 15:59:41,803 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 15:59:41,806 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 15:59:41,808 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 16:01:32,328 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:01:32,331 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:01:32,333 [Worker-21: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 16:04:48,809 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:04:48,813 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:04:48,815 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 16:05:34,032 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:05:34,035 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:05:34,037 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10\src\test\resources
+2025-01-17 16:30:37,532 [Worker-28: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ejercicioBBDD-2:0.0.1-SNAPSHOT @ C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\pom.xml.
+2025-01-17 16:30:40,942 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ejercicioBBDD-12/src/main/java
+2025-01-17 16:30:40,944 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/main/resources
+2025-01-17 16:30:40,950 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/main/resources
+2025-01-17 16:30:40,958 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ejercicioBBDD-12/src/test/java
+2025-01-17 16:30:40,959 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/test/resources
+2025-01-17 16:30:44,077 [Worker-28: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 8 sec
+2025-01-17 16:30:44,081 [Worker-28: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-17 16:30:44,307 [Worker-28: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ejercicioBBDD-2:0.0.1-SNAPSHOT @ C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\pom.xml.
+2025-01-17 16:30:44,769 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ejercicioBBDD-12/src/main/java
+2025-01-17 16:30:44,769 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/main/resources
+2025-01-17 16:30:44,770 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/main/resources
+2025-01-17 16:30:44,770 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ejercicioBBDD-12/src/test/java
+2025-01-17 16:30:44,770 [Worker-28: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ejercicioBBDD-12/src/test/resources
+2025-01-17 16:30:45,114 [Worker-28: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0,00 sec, refresh facades takes 0,00 sec, update config takes 0,00 sec 
+2025-01-17 16:30:45,540 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:30:45,549 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:30:45,551 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:39:26,659 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:39:26,668 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:39:26,670 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:44:45,017 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:44:45,020 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:44:45,022 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:45:06,241 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:45:06,244 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:45:06,247 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:48:15,931 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:48:15,934 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:48:15,937 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:48:31,558 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:48:31,561 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:48:31,563 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:49:51,556 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:49:51,565 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:49:51,567 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:51:55,036 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:51:55,040 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:51:55,042 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:54:25,436 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:54:25,438 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:54:25,440 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:55:41,958 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:55:41,972 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:55:41,974 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 16:55:53,084 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 16:55:53,087 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 16:55:53,089 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 18:16:35,424 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 18:16:35,434 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 18:16:35,436 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 18:16:45,904 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 18:16:45,908 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 18:16:45,910 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 18:17:14,652 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 18:17:14,655 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 18:17:14,657 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources
+2025-01-17 20:40:02,026 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-17 20:40:02,041 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-17 20:40:02,043 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-12\src\test\resources

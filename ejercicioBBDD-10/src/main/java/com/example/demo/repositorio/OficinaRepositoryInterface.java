@@ -21,15 +21,6 @@ public interface OficinaRepositoryInterface {
 	//eliminar por id
 	void deleteOficina (Oficina oficina);
 	
-	//contar empleados
-	Integer contarEmpleados (Integer id);
-	
-	//devolver un mapa id y num empleados
-	Map<Integer, Integer> mapaOficina ();
-	
-	//list mas de n empleados
-	List<Oficina> masXempleados(Integer numero);
-	
 	//actualizar telf
 	void actualizarTelf (Integer id, String telefono);
 }
