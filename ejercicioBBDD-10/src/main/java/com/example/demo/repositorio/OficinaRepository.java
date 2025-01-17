@@ -1,58 +1,81 @@
 package com.example.demo.repositorio;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Empleado;
 import com.example.demo.model.Oficina;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+@Repository
 public class OficinaRepository implements OficinaRepositoryInterface{
-
+	@PersistenceContext
+	private EntityManager entityManager; // creamos el entityManager
 	@Override
 	public void insertOficina(Oficina oficina) {
-		// TODO Auto-generated method stub
+		entityManager.persist(oficina);
 		
 	}
 
 	@Override
 	public List<Oficina> getOficinas() {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.createQuery("FROM Oficina o", Oficina.class).getResultList();
 	}
 
 	@Override
 	public Oficina getOficinaId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(Oficina.class, id);
 	}
 
 	@Override
-	public void deleteOficina(Integer id) {
-		// TODO Auto-generated method stub
+	public void deleteOficina(Oficina oficina) {
+		entityManager.remove(oficina);
 		
 	}
 
-	@Override
-	public Integer contarEmpleados(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	//  Contar empleados de una oficina
+    public Integer contarEmpleados(Integer id) {
+        String jpql = "SELECT COUNT(e) FROM Empleado e WHERE e.oficina.id = :id";
+        Long count = (Long) entityManager.createQuery(jpql)
+                .setParameter("id", id)
+                .getSingleResult();
+        return count.intValue();
+    }
 
-	@Override
-	public Map<Integer, Integer> mapaOficina() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    //  Devolver un mapa con id de oficina y número de empleados
+    public Map<Integer, Integer> mapaOficina() {
+        String jpql = "SELECT o.id, COUNT(e) FROM Oficina o LEFT JOIN o.empleados e GROUP BY o.id";
+        List<Object[]> results = entityManager.createQuery(jpql).getResultList();
+        Map<Integer, Integer> oficinaEmpleadoMap = new HashMap<>();
+        for (Object[] result : results) {
+            Integer oficinaId = (Integer) result[0];
+            Long empleadoCount = (Long) result[1];
+            oficinaEmpleadoMap.put(oficinaId, empleadoCount.intValue());
+        }
+        return oficinaEmpleadoMap;
+    }
 
-	@Override
-	public List<Oficina> masXempleados(Integer numero) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    //  Devolver oficinas con más de N empleados
+    public List<Oficina> masXempleados(Integer numero) {
+        String jpql = "SELECT o FROM Oficina o WHERE SIZE(o.empleados) > :numero";
+        return entityManager.createQuery(jpql, Oficina.class)
+                .setParameter("numero", numero)
+                .getResultList();
+    }
 
-	@Override
-	public void actualizarTelf(Integer id, Integer telefono) {
-		// TODO Auto-generated method stub
-		
-	}
-
+    // Actualizar el teléfono de una oficina dado el id de un empleado
+    @Transactional
+    public void actualizarTelf(Integer id, String telefono) {
+        String jpql = "UPDATE Oficina o SET o.telefono = :telefono " +
+                      "WHERE o.id = (SELECT e.oficina.id FROM Empleado e WHERE e.id = :empleadoId)";
+        entityManager.createQuery(jpql)
+                .setParameter("telefono", telefono)
+                .setParameter("empleadoId", id)
+                .executeUpdate();
+    }
 }

@@ -26,7 +26,7 @@ public class Oficina {
 	private String telefono;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "oficna_id", referencedColumnName = "id")
+	@JoinColumn(name = "oficina_id")
 	private List <Empleado> empleados;
 
 	public Oficina(Integer id, String ubicacion, String telefono, List<Empleado> empleados) {
@@ -36,7 +36,16 @@ public class Oficina {
 		this.telefono = telefono;
 		this.empleados = empleados;
 	}
+		
+	  // Métodos utiles para gestionar la lista de empleados
+    public void addEmpleado(Empleado empleado) {
+        empleados.add(empleado);
+    }
 
+    public void removeEmpleado(Empleado empleado) {
+        empleados.remove(empleado);
+    }
+	
 	@Override
 	public String toString() {
 		return "Oficina [id=" + id + ", ubicacion=" + ubicacion + ", telefono=" + telefono + ", empleados=" + empleados

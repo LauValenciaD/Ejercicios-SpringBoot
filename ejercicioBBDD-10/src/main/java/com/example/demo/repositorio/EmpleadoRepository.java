@@ -14,7 +14,7 @@ public class EmpleadoRepository implements EmpleadoRepositoryInterface{
 	private EntityManager entityManager; // creamos el entityManager
 	@Override
 	public void insertEmpleado(Empleado empleado) {
-		// TODO Auto-generated method stub
+		entityManager.persist(empleado);
 		
 	}
 
@@ -25,25 +25,22 @@ public class EmpleadoRepository implements EmpleadoRepositoryInterface{
 
 	@Override
 	public Empleado getEmpleado(Integer id) {
-		// TODO Auto-generated method stub
 		return entityManager.find(Empleado.class, id);
 	}
 
 	@Override
 	public void patchEmpleado(Empleado empleado) {
-		// TODO Auto-generated method stub
+		entityManager.merge(empleado);
 		
 	}
 
 	@Override
-	public void deleteEmpleado(Integer id) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void deleteEmpleado(Empleado empleado) {
+			entityManager.remove(empleado);
+		}		
 
 	@Override
 	public List<Empleado> getEmpleadosPuestos(String puesto) {
-		// TODO Auto-generated method stub
 		return entityManager.createQuery("FROM Empleado e WHERE e.puesto = :puesto", Empleado.class).setParameter("puesto", puesto).getResultList();
 	}
 

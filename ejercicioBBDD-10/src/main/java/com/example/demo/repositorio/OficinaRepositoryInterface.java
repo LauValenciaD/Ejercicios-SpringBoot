@@ -3,8 +3,11 @@ package com.example.demo.repositorio;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.demo.model.Oficina;
 
+@Repository
 public interface OficinaRepositoryInterface {
 	//crear oficina
 	void insertOficina (Oficina oficina);
@@ -16,7 +19,7 @@ public interface OficinaRepositoryInterface {
 	Oficina getOficinaId (Integer id);
 	
 	//eliminar por id
-	void deleteOficina (Integer id);
+	void deleteOficina (Oficina oficina);
 	
 	//contar empleados
 	Integer contarEmpleados (Integer id);
@@ -28,5 +31,5 @@ public interface OficinaRepositoryInterface {
 	List<Oficina> masXempleados(Integer numero);
 	
 	//actualizar telf
-	void actualizarTelf (Integer id, Integer telefono);
+	void actualizarTelf (Integer id, String telefono);
 }

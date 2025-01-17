@@ -25,12 +25,17 @@ public class Empleado {
 	public String toString() {
 		return "Empleado [id=" + id + ", nombre=" + nombre + ", puesto=" + puesto + ", email=" + email + "]";
 	}
-	public Empleado(Integer id, String nombre, String puesto) {
+	
+
+	public Empleado(Integer id, String nombre, String puesto, String email) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.puesto = puesto;
+		this.email = email;
 	}
+
+
 	public Empleado() {
 		super();
 	}
@@ -51,5 +56,12 @@ public class Empleado {
 	}
 	public void setPuesto(String puesto) {
 		this.puesto = puesto;
+	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
