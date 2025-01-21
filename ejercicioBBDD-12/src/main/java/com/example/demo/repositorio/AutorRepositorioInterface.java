@@ -22,7 +22,7 @@ public interface AutorRepositorioInterface {
 		//actualizar info
 		void actualizar (Autor autor);
 		
-		//eliminar empleado
+		//eliminar autor
 		void delete (Autor autor);
 		
 }

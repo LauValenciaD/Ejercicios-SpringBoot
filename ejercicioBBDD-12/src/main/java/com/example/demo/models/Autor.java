@@ -34,6 +34,14 @@ public class Autor {
 		this.nombre = nombre;
 		this.libros = libros;
 	}
+	
+	//constructor sin ID
+	public Autor(String nombre, List<Libro> libros) {
+		super();
+		this.nombre = nombre;
+		this.libros = libros;
+	}
+
 
 	public Autor() {
 		super();
@@ -65,7 +73,8 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor [id=" + id + ", nombre=" + nombre + "]";
+		return "Autor [id=" + id + ", nombre=" + nombre + ", libros=" + libros + "]";
 	}
-	
+
+
 }

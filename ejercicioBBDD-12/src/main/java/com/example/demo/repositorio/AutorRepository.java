@@ -5,36 +5,39 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.models.Autor;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 @Repository
 public class AutorRepository implements AutorRepositorioInterface{
-	
+	@PersistenceContext
+	private EntityManager entityManager; // creamos el entityManager
 	@Override
 	public List<Autor> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.createQuery("FROM Autor a", Autor.class).getResultList();
 	}
 
 	@Override
 	public Autor getId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(Autor.class, id);
 	}
 
 	@Override
 	public void insert(Autor autor) {
-		// TODO Auto-generated method stub
+		entityManager.persist(autor);
+		System.out.println("Hola desde insert");
 		
 	}
 
 	@Override
 	public void actualizar(Autor autor) {
-		// TODO Auto-generated method stub
+		entityManager.merge(autor);
 		
 	}
 
 	@Override
 	public void delete(Autor autor) {
-		// TODO Auto-generated method stub
+		entityManager.remove(autor);
 		
 	}
 
