@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="installedFeatures">
-		<item value="org.eclipse.buildship:3.1.10.v20240802-1314"/>
+		<item value="org.eclipse.buildship:3.1.10.v20240802-1211"/>
 		<item value="org.eclipse.egit.gitflow.feature:7.0.0.202409031743-r"/>
 		<item value="org.eclipse.egit:7.0.0.202409031743-r"/>
 		<item value="org.eclipse.emf.common:2.32.0.v20240731-0952"/>
@@ -42,6 +42,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Laura\Documents\workspace-spring-tool-suite-4-4.26.0.RELEASE\Ejercicios-SpringBoot"/>
 			<item value="C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-10"/>
 			<item value="C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\ejercicioBBDD-6"/>
 			<item value="C:\Users\lvalencia5049\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\claseCuatro"/>
@@ -50,9 +51,9 @@
 		<section name="SmartImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="526"/>
 			<item key="DIALOG_Y_ORIGIN" value="109"/>
-			<item key="DIALOG_WIDTH" value="885"/>
-			<item key="DIALOG_HEIGHT" value="629"/>
-			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+			<item key="DIALOG_WIDTH" value="1111"/>
+			<item key="DIALOG_HEIGHT" value="726"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
 	<section name="WORKBENCH_SETTINGS">
