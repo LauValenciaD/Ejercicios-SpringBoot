@@ -13,7 +13,7 @@ public interface CursoServInt {
 	List<Curso> getAll ();
 	
 	//consultar por id
-	Curso getEmpleado (Integer id);
+	Curso getId (Integer id);
 	
 	//actualizar info
 	void patch (Curso curso);

@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,17 +21,18 @@ public class Curso {
 	private Integer id;
 	@Column(name = "nombre", nullable = false, length = 255)
 	private String nombre;
-	@Column(name = "email", nullable = false, length = 255)
-	private String email;
+	@Column(name = "descripcion", nullable = false, length = 255)
+	private String descripcion;
 	
-	@ManyToMany(mappedBy = "cursos")
+	@ManyToMany(mappedBy = "cursos", fetch = FetchType.EAGER)
 	private List<Estudiante> estudiantes = new ArrayList<>();
 
-	public Curso(String nombre, String email, List<Estudiante> estudiantes) {
+	public Curso(String nombre, String descripcion, List<Estudiante> estudiantes) {
 		super();
 		this.nombre = nombre;
-		this.email = email;
-		this.estudiantes = estudiantes;
+		this.descripcion = descripcion;
+		//permite evitar problemas si hay lista o si es null
+		this.estudiantes = (estudiantes != null) ? estudiantes : new ArrayList<>();
 	}
 
 	public Curso() {
@@ -54,11 +56,11 @@ public class Curso {
 	}
 
 	public String getEmail() {
-		return email;
+		return descripcion;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.descripcion = email;
 	}
 
 	public List<Estudiante> getEstudiantes() {
@@ -68,11 +70,17 @@ public class Curso {
 	public void setEstudiantes(List<Estudiante> estudiantes) {
 		this.estudiantes = estudiantes;
 	}
-
+	
+	//Para evitar el bucle infinito de ToString
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", nombre=" + nombre + ", email=" + email + ", estudiantes=" + estudiantes + "]";
+	    return "Curso{" +
+	            "nombre='" + nombre + '\'' +
+	            ", descripcion='" + descripcion + '\'' +
+	            ", estudiantes=" + estudiantes.stream().map(Estudiante::getNombre).toList() +
+	            '}';
 	}
+
 	
 	
 }

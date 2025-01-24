@@ -9,7 +9,7 @@ public interface EstudianteServInter {
 		List<Estudiante> getAll ();
 		
 		//consultar por id
-		Estudiante getEmpleado (Integer id);
+		Estudiante getId (Integer id);
 		
 		//actualizar info
 		void patchEmail (Integer id, String email);

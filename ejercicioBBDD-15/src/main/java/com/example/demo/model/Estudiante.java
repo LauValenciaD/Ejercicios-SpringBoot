@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,7 +27,7 @@ public class Estudiante {
 	@Column(name = "email", nullable = false, length = 255)
 	private String email;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "estudiante_curso",
 		joinColumns = {@JoinColumn(name = "id_estudiante") },
 		inverseJoinColumns = {@JoinColumn(name = "id_curso") })
@@ -37,7 +38,8 @@ public class Estudiante {
 		super();
 		this.nombre = nombre;
 		this.email = email;
-		this.cursos = cursos;
+		//permite evitar problemas si hay lista o si es null
+		this.cursos = (cursos != null) ? cursos : new ArrayList<>();
 	}
 
 	public Estudiante() {
@@ -78,8 +80,13 @@ public class Estudiante {
 
 	@Override
 	public String toString() {
-		return "Estudiante [id=" + id + ", nombre=" + nombre + ", email=" + email + ", cursos=" + cursos + "]";
+	    return "Estudiante{" +
+	            "nombre='" + nombre + '\'' +
+	            ", email='" + email + '\'' +
+	            ", cursos=" + cursos.stream().map(Curso::getNombre).toList() +
+	            '}';
 	}
+
 	
 	
 	}

@@ -6,21 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Estudiante;
-import com.example.demo.repositorio.EstudianteRepositorio;
+import com.example.demo.repositorio.EstudianteRepoInter;
 
 import jakarta.transaction.Transactional;
 
 @Service
 public class EstudianteService implements EstudianteServInter{
 	@Autowired
-	private EstudianteRepositorio repo;
+	private EstudianteRepoInter repo;
 	@Override
 	public List<Estudiante> getAll() {
 		return repo.getAll();
 	}
 
 	@Override
-	public Estudiante getEmpleado(Integer id) {
+	public Estudiante getId(Integer id) {
 		return repo.getId(id);
 	}
 

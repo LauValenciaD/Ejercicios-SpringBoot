@@ -2,11 +2,13 @@ package com.example.demo.repositorio;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.demo.model.Curso;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-
+@Repository
 public class CursoRepositorio implements CursoRepoInterface {
 	@PersistenceContext
 	private EntityManager entityManager; // creamos el entityManager

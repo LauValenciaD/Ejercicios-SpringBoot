@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Curso;
 import com.example.demo.model.Estudiante;
-import com.example.demo.repositorio.CursoRepositorio;
+import com.example.demo.repositorio.CursoRepoInterface;
 
 import jakarta.transaction.Transactional;
 
 @Service
 public class CursoService implements CursoServInt{
 	@Autowired
-	private CursoRepositorio repo;
+	private CursoRepoInterface repo;
 	
 	@Override
 	@Transactional
@@ -29,7 +29,7 @@ public class CursoService implements CursoServInt{
 	}
 
 	@Override
-	public Curso getEmpleado(Integer id) {
+	public Curso getId(Integer id) {
 		return repo.getId(id);
 	}
 
@@ -52,8 +52,9 @@ public class CursoService implements CursoServInt{
 	}
 
 	@Override
+	//es mas eficiente hacer una Query en la BD
 	public List<Curso> containsPalabra(String palabra) {
-		List<Curso> lista = repo.getAll().stream().filter(t -> t.getNombre().contains(palabra)).toList();
+		List<Curso> lista = repo.getAll().stream().filter(t -> t.getNombre().toLowerCase().contains(palabra.toLowerCase())).toList();
 		 return lista;
 	}
 
@@ -61,8 +62,13 @@ public class CursoService implements CursoServInt{
 	@Transactional
 	public void deleteEstudiantedelCurso(Integer idCurso, Estudiante estudiante) {
 		Curso curso = repo.getId(idCurso);
+		if (curso == null) {
+			System.out.println("No se encontró el curso"); }
+		else {
 		curso.getEstudiantes().remove(estudiante);
-		repo.actualizar(curso);
+		//se borran de ambas listas al ser bidireccional
+		estudiante.getCursos().remove(curso);
+		repo.actualizar(curso); }
 		
 	}
 
