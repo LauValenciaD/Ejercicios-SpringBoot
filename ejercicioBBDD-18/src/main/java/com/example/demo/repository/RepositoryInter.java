@@ -19,7 +19,7 @@ public interface RepositoryInter {
 	
 	//actualizar info
 	void actualizar (Persona persona);
+
+	Proyecto getIdProyecto(Integer id);
 	
-	//eliminar
-	void removeProyectoFromPersona (Persona persona, Proyecto proyecto);
 }

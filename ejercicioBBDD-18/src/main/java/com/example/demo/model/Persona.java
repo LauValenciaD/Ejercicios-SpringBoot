@@ -46,6 +46,14 @@ public class Persona {
 	public Persona() {
 		super();
 	}
+	public void agregarProyecto(Proyecto proyecto) {
+		this.proyectos.add(proyecto);
+		proyecto.getPersonas().add(this);  //relacion bidireccional unicamente
+	}
+	public void borrarProyecto(Proyecto proyecto) {
+		this.proyectos.remove(proyecto);
+		proyecto.getPersonas().remove(this);  //relacion bidireccional unicamente
+	}
 
 	public Integer getId() {
 		return id;

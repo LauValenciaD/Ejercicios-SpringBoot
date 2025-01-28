@@ -29,6 +29,11 @@ public class ServiceImpl implements ServiceInter {
 	public Persona getId(Integer id) {
 		return personaRepository.getId(id);
 	}
+	
+	public Proyecto getIdProyecto(Integer id) {
+		return personaRepository.getIdProyecto(id);
+	}
+
 
 	@Transactional
 	public void asignarPasaporte(Persona persona, Pasaporte pasaporte) {
@@ -45,11 +50,16 @@ public class ServiceImpl implements ServiceInter {
 
 	@Transactional
 	public void asignarProyecto(Persona persona, Proyecto proyecto) {
-		persona.getProyectos().add(proyecto);
-		personaRepository.actualizar(persona);
+		Persona encontrada = personaRepository.getId(persona.getId());
+		Proyecto proyectoEncontrado = personaRepository.getIdProyecto(proyecto.getId()); //comprobar que esta insertado en la BD
+		encontrada.agregarProyecto(proyectoEncontrado); //llamamos el metodo de la clase persona
+		personaRepository.actualizar(encontrada);
 	}
 	@Transactional
 	public void removeProyectoFromPersona(Persona persona, Proyecto proyecto) {
-		personaRepository.removeProyectoFromPersona(persona, proyecto);
+		Persona encontrada = personaRepository.getId(persona.getId());
+		Proyecto proyectoEncontrado = personaRepository.getIdProyecto(proyecto.getId());
+		encontrada.borrarProyecto(proyectoEncontrado); //llamamos el metodo de la clase persona
+		personaRepository.actualizar(encontrada);
 	}
 }

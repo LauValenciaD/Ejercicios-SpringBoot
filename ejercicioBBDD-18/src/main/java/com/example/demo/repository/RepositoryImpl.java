@@ -44,10 +44,9 @@ public class RepositoryImpl implements RepositoryInter {
 		entityManager.merge(persona);
 		
 	}
-    // Eliminar un Proyecto de una Persona
-    public void removeProyectoFromPersona(Persona persona, Proyecto proyecto) {
-        persona.getProyectos().remove(proyecto);
-        actualizar(persona); // Guardar cambios
-    }
+	@Override
+	public Proyecto getIdProyecto(Integer id) {
+		return entityManager.find(Proyecto.class, id);
+	}
 
 }
