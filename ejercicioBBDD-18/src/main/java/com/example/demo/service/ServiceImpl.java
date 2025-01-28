@@ -48,7 +48,7 @@ public class ServiceImpl implements ServiceInter {
 		persona.getProyectos().add(proyecto);
 		personaRepository.actualizar(persona);
 	}
-
+	@Transactional
 	public void removeProyectoFromPersona(Persona persona, Proyecto proyecto) {
 		personaRepository.removeProyectoFromPersona(persona, proyecto);
 	}

@@ -34,7 +34,7 @@ public class EjercicioBbdd18Application implements CommandLineRunner{
         personaService.insert(persona1);
         personaService.insert(persona2);
 
-        // Asociar pasaportes
+       // Asociar pasaportes
         personaService.asignarPasaporte(persona1, pasaporte1);
         personaService.asignarPasaporte(persona2, pasaporte2);
 
@@ -58,4 +58,4 @@ public class EjercicioBbdd18Application implements CommandLineRunner{
 		
 	}
 
-}
+} 
