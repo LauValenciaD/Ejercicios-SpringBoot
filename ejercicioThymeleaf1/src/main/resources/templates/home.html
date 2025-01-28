@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pagina de inicio</title>
+</head>
+<body>
+	<h1 th:text="${mensaje}">Texto por defecto</h1>
+	<p th:text="'Hola, ' + ${nombre1}">Texto de ejemplo</p>
+<!-- 	el utext interpreta el html -->
+	<p th:utext="'Hola, ' + ${nombre2}">Texto de ejemplo</p> 
+	<p th:text="'Hola, ' + ${nombre2}">Texto de ejemplo</p>
+	<img th:src="@{/img/gato.jpg}" alt="Logo">
+</body>
+</html>
