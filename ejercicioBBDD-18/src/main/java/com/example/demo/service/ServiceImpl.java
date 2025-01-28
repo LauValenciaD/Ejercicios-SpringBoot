@@ -18,8 +18,16 @@ public class ServiceImpl implements ServiceInter {
 	private RepositoryInter personaRepository;
 
 	@Transactional
-	public void insert(Persona persona) {
-		personaRepository.insert(persona);
+	public void insertPersona(Persona persona) {
+		personaRepository.insertPersona(persona);
+	}
+	@Transactional
+	public void insertProyecto(Proyecto proyecto) {
+		personaRepository.insertProyecto(proyecto);
+	}
+	@Transactional
+	public void insertPasaporte(Pasaporte pasaporte) {
+		personaRepository.insertPasaporte(pasaporte);
 	}
 
 	public List<Persona> getAllPersonasWithProyectos() {
@@ -39,7 +47,7 @@ public class ServiceImpl implements ServiceInter {
 	public void asignarPasaporte(Persona persona, Pasaporte pasaporte) {
 		Persona encontrado = personaRepository.getId(persona.getId());
 		if (encontrado == null) {
-			personaRepository.insert(persona); // insertar persona si aún no está en la BD
+			personaRepository.insertPersona(persona); // insertar persona si aún no está en la BD
 		}
 		if (encontrado != null) {
 			pasaporte.setPersona(encontrado);

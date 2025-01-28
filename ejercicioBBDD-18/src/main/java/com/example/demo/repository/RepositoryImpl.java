@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.model.Pasaporte;
 import com.example.demo.model.Persona;
 import com.example.demo.model.Proyecto;
 
@@ -34,7 +35,7 @@ public class RepositoryImpl implements RepositoryInter {
 	}
 
 	@Override
-	public void insert(Persona persona) {
+	public void insertPersona(Persona persona) {
 		entityManager.persist(persona);
 		
 	}
@@ -47,6 +48,17 @@ public class RepositoryImpl implements RepositoryInter {
 	@Override
 	public Proyecto getIdProyecto(Integer id) {
 		return entityManager.find(Proyecto.class, id);
+	}
+
+	@Override
+	public void insertPasaporte(Pasaporte pasaporte) {
+		entityManager.persist(pasaporte);
+		
+	}
+	@Override
+	public void insertProyecto(Proyecto proyecto) {
+		entityManager.persist(proyecto);
+		
 	}
 
 }

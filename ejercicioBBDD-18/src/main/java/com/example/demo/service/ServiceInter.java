@@ -8,7 +8,11 @@ import com.example.demo.model.Proyecto;
 
 public interface ServiceInter {
 
-	void insert(Persona persona);
+	void insertPersona(Persona persona);
+	
+	void insertProyecto(Proyecto proyecto);
+	
+	void insertPasaporte(Pasaporte pasaporte);
 
 	List<Persona> getAllPersonasWithProyectos();
 
