@@ -11,5 +11,13 @@
 	<p th:utext="'Hola, ' + ${nombre2}">Texto de ejemplo</p> 
 	<p th:text="'Hola, ' + ${nombre2}">Texto de ejemplo</p>
 	<img th:src="@{/img/gato.jpg}" alt="Logo">
+	<a th:href="@{/index}"> ir a index.html</a>
+	
+	<p th:if="${role == 'admin'}">El usuario es admin</p>
+	<p th:unless="${role != 'admin'}">El usuario no es admin</p>
+	<ul>
+ <li th:each="persona : ${personas}" th:text="${persona}"></li>
+</ul>
+<a th:href="@{/form}"> ir a form.html</a>
 </body>
 </html>

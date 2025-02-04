@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario</h1>
+<form th:action="@{/form}" th:object="${user}" th:method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="nombre">
+    
+    <label for="edad">Edad</label>
+    <input type="text" th:field="*{edad}" id="edad">
+    
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>
