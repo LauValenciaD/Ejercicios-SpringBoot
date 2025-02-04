@@ -23,9 +23,9 @@ public class Cliente {
 	@JoinColumn (name = "direccion_id", referencedColumnName = "id")
 	private Direccion direccion;
 
-	public Cliente(Integer id, String nombre, Direccion direccion) {
+
+	public Cliente(String nombre, Direccion direccion) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 	}

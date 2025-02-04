@@ -19,9 +19,10 @@ public class Direccion {
 	@Column(name = "ciudad", nullable = false)
 	private String ciudad;
 
-	public Direccion(Integer id, String calle, String ciudad) {
+
+
+	public Direccion(String calle, String ciudad) {
 		super();
-		this.id = id;
 		this.calle = calle;
 		this.ciudad = ciudad;
 	}
