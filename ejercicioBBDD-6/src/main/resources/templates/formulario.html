@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: agregar cliente</h1>
+<form th:action="@{/clientes/formulario}" th:object="${cliente}" th:method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="nombre">
+    
+    <label for="calle">Calle</label>
+    <input type="text" th:field="*{direccion.calle}" id="calle">
+	
+	<label for="ciudad">Ciudad</label>
+    <input type="text" th:field="*{direccion.ciudad}" id="ciudad">    
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>

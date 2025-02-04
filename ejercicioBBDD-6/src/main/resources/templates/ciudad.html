@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: buscar por ciudad</h1>
+<form th:action="@{/clientes/ciudad}" method="post">
+    <label for="ciudad">Ciudad</label>
+<!--     usamos th:value para mantener el mismo valor en el input  -->
+    <input type="text" name="ciudad" id="ciudad" th:value="${ciudad}">  
+    <button type="submit">Enviar</button>
+</form>
+
+<h3>Lista</h3>
+<ul>
+    <li th:each="cliente : ${clientes}" th:text="${cliente.nombre}"></li>
+</ul>
+<a href="/clientes">Volver a la lista</a>
+
+</body>
+</html>
