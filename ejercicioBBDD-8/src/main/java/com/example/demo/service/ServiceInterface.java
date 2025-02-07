@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import com.example.demo.models.Perfil;
 import com.example.demo.models.Usuario;
 
 public interface ServiceInterface {
@@ -17,13 +18,13 @@ public interface ServiceInterface {
 
 	public boolean deleteUsuario(Integer id);
 	
-	Usuario obtenerPerfil(Integer id);
+	Perfil obtenerPerfil(Integer id);
 	
-	Usuario actualizarPerfil (Integer id);
+	void actualizarPerfil (Integer id, Perfil nuevoPerfil);
 	
-	Usuario actualizarDisponible (Integer id);
+	void actualizarDisponible (Integer id);
 	
-	List<Usuario> buscarPorEdad();
+	List<Usuario> usuariosBiografia(String palabra);
 
 	Usuario obtenerDisponible();
 

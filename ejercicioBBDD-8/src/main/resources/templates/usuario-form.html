@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: agregar usuario</h1>
+<form th:action="@{/usuario-form}" th:object="${usuario}" th:method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="nombre" th:value="${usuario.nombre}">
+    
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" th:value="${usuario.email}">
+	
+	<label for="bio">Biografía</label>
+    <textarea th:field="*{perfil.bio}" id="bio" th:value="${usuario.perfil.bio}"></textarea>   
+     
+     <label for="estado">Estado</label>
+    <input type="text" th:field="*{perfil.estado}" id="estado" th:value="${usuario.perfil.estado}">
+    
+    <button type="submit" th:if="${hayUsuario}==false">Enviar</button>
+    <a th:if="${hayUsuario}" href="/usuarios">Volver</a>
+</form>
+
+</body>
+</html>

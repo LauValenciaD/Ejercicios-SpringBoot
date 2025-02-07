@@ -9,6 +9,7 @@ import com.example.demo.models.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 @Repository
 public class UsuarioRepositorio implements RepositoryInterface{
 	@PersistenceContext
@@ -45,21 +46,30 @@ public class UsuarioRepositorio implements RepositoryInterface{
 	}
 
 	@Override
-	public List<Usuario> buscarPorEdad() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Usuario> usuariosBiografia(String palabra) {
+	      String hql = "SELECT u FROM Usuario u WHERE u.perfil.bio LIKE :palabra";
+	        TypedQuery<Usuario> query = entityManager.createQuery(hql, Usuario.class);
+	        query.setParameter("palabra", "%" + palabra + "%");
+	        return query.getResultList();
+
 	}
 
 	@Override
 	public Usuario obtenerDisponible() {
-		// TODO Auto-generated method stub
-		return null;
+		 String hql = "SELECT u FROM Usuario u WHERE u.perfil.estado = :estado";
+         TypedQuery<Usuario> query = entityManager.createQuery(hql, Usuario.class);
+         query.setParameter("estado", "DISPONIBLE");
+         
+         List<Usuario> usuarios = query.getResultList();
+         return usuarios.isEmpty() ? null : usuarios.get(0);
+
 	}
 
 	@Override
 	public List<Usuario> obtenerNoDisponible() {
-		// TODO Auto-generated method stub
-		return null;
+		String hql = "SELECT u FROM Usuario u WHERE u.perfil.estado = :estado";
+        return entityManager.createQuery(hql, Usuario.class).setParameter("estado", "NO DISPONIBLE").getResultList();
+
 	}
 
 }

@@ -15,7 +15,7 @@ public interface RepositoryInterface {
 
 	void delete(Usuario usuario);
 
-	List<Usuario> buscarPorEdad();
+	List<Usuario> usuariosBiografia(String palabra);
 
 	Usuario obtenerDisponible();
 

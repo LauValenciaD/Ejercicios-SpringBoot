@@ -20,9 +20,8 @@ public class Perfil {
 	@Column(name="estado", nullable = true, length = 30)
 	private String estado;
 	
-	public Perfil(Integer id, String bio, String estado) {
+	public Perfil(String bio, String estado) {
 		super();
-		this.id = id;
 		this.bio = bio;
 		this.estado = estado;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.models.Perfil;
 import com.example.demo.models.Usuario;
 import com.example.demo.repositorio.UsuarioRepositorio;
 
@@ -79,41 +80,51 @@ public class ServicioUsuario implements ServiceInterface{
 	}
 
 	@Override
-	public Usuario obtenerPerfil(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Perfil obtenerPerfil(Integer id) {
+		Usuario usuario = repositorio.getId(id);
+		return usuario.getPerfil();
+	}
+
+
+	@Override
+	@Transactional
+	public void actualizarPerfil(Integer id, Perfil nuevoPerfil) {
+
+		Usuario usuario = repositorio.getId(id);
+		if (usuario != null) {
+			if (nuevoPerfil != null) {
+				nuevoPerfil.setId(usuario.getPerfil().getId());
+				usuario.setPerfil(nuevoPerfil);
+				repositorio.actualizar(usuario);
+
+			}
+		}
+
 	}
 
 	@Override
 	@Transactional
-	public Usuario actualizarPerfil(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public void actualizarDisponible(Integer id) {
+		Usuario usuario = repositorio.getId(id);
+		usuario.getPerfil().setEstado("DISPONIBLE");
 	}
 
-	@Override
-	@Transactional
-	public Usuario actualizarDisponible(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
-	public List<Usuario> buscarPorEdad() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Usuario> usuariosBiografia(String palabra) {
+		List<Usuario> lista = repositorio.usuariosBiografia(palabra);
+		return lista;
+
 	}
 
 	@Override
 	public Usuario obtenerDisponible() {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.obtenerDisponible();
 	}
 
 	@Override
 	public List<Usuario> obtenerNoDisponible() {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.obtenerNoDisponible();
 	}
 
 }

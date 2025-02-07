@@ -24,11 +24,10 @@ public class Usuario {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "perfil_id", referencedColumnName = "id")
-	private Perfil perfil;
+	private Perfil perfil = new Perfil();
 
-	public Usuario(Integer id, String nombre, String email, Perfil perfil) {
+	public Usuario(String nombre, String email, Perfil perfil) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 		this.perfil = perfil;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <h2>Primer usuario disponible</h2>
+    <table border="1" th:if="${hayUsuario}">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Biografia</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${usuario.id}"></td>
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.email}"></td>
+                <td th:text="${usuario.perfil.bio}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p th:if="${hayUsuario}==false">No hay usuarios disponibles</p>
+    <a href="/usuarios">Volver</a>
+</body>
+</html>
