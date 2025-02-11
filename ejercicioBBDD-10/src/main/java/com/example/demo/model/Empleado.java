@@ -27,9 +27,8 @@ public class Empleado {
 	}
 	
 
-	public Empleado(Integer id, String nombre, String puesto, String email) {
+	public Empleado(String nombre, String puesto, String email) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.puesto = puesto;
 		this.email = email;

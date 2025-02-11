@@ -29,9 +29,8 @@ public class Oficina {
 	@JoinColumn(name = "oficina_id")
 	private List <Empleado> empleados;
 
-	public Oficina(Integer id, String ubicacion, String telefono, List<Empleado> empleados) {
+	public Oficina(String ubicacion, String telefono, List<Empleado> empleados) {
 		super();
-		this.id = id;
 		this.ubicacion = ubicacion;
 		this.telefono = telefono;
 		this.empleados = empleados;

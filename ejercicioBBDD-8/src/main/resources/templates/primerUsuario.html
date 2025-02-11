@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -26,6 +26,6 @@
         </tbody>
     </table>
     <p th:if="${hayUsuario}==false">No hay usuarios disponibles</p>
-    <a href="/usuarios">Volver</a>
+    <a href="/">Volver</a>
 </body>
 </html>

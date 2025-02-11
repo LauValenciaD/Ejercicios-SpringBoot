@@ -45,11 +45,7 @@ public class ThymeleafController {
 	@GetMapping("/usuario-form/{id}")
 	public String verUsuario(@PathVariable Integer id, Model model) {
 		Usuario usuario = service.getUsuario(id);
-		if (usuario == null) {
-			return "redirect:/usuarios"; // Redirige si el usuario no existe
-		}
 		model.addAttribute("usuario", usuario);
-		model.addAttribute("hayUsuario", true);
 		return "usuario-form"; // Nombre de la nueva vista
 	}
 	@GetMapping("/primerUsuario")

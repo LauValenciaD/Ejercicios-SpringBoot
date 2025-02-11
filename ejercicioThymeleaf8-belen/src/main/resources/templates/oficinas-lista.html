@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de oficinas</title>
+</head>
+<body>
+    <h2>Lista de oficinas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Puesto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="oficina : ${oficinas}">
+                <td th:text="${oficina.id}"></td>
+                <td th:text="${oficina.ubicacion}"></td>
+                <td th:text="${oficina.telefono}"></td>
+                <td><a th:href="@{/oficina-form/{id}(id=${oficina.id})}">Ver</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Volver</a>
+
+</body>
+</html>

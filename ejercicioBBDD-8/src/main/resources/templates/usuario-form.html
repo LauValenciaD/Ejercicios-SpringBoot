@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -19,8 +19,8 @@
      <label for="estado">Estado</label>
     <input type="text" th:field="*{perfil.estado}" id="estado" th:value="${usuario.perfil.estado}">
     
-    <button type="submit" th:if="${hayUsuario}==false">Enviar</button>
-    <a th:if="${hayUsuario}" href="/usuarios">Volver</a>
+    <button type="submit" th:if="${usuario.id}==null">Enviar</button>
+    <a th:if="${usuario.id}!=null" href="/usuarios">Volver</a>
 </form>
 
 </body>
