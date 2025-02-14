@@ -20,19 +20,20 @@
                 <td th:text="${oficina.id}"></td>
                 <td th:text="${oficina.ubicacion}"></td>
                 <td th:text="${oficina.telefono}"></td>
-                <td><a th:href="@{/oficina-form"  name="verEmpleados" value="${oficina.id}">Ver empleados</a></td>
+                <td>
+                <a th:href="@{/oficinas/{id}(id=${oficina.id})}">Ver empleados</a></td>
             </tr>
         </tbody>
     </table>
-    <div th:if="!${empleados}.isEmpty()">
+    <div th:unless="${empleados.isEmpty()}">
     <h3>Lista de empleados</h3>
     <ul>
-    <li th:each= "empleado : ${empleados}" th: text="${empleado.nombre} : ${empleado.puesto}"></li>
+    <li th:each= "empleado : ${empleados}" th:text="${empleado.nombre} + ':' + ${empleado.puesto}"></li>
     </ul>
     </div>
     
     
-    <a href="/oficinas">Añadir oficina</a>
+    <a href="/oficina-form">Añadir oficina</a>
     <a href="/">Volver</a>
 
 </body>

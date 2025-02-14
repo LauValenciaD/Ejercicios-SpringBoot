@@ -17,7 +17,7 @@ public class Oficina {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name="oficina_id")
-    private List<Empleado> empleados;
+    private List<Empleado> empleados = new ArrayList<Empleado>();
 
     
     public Oficina(String ubicacion, String telefono) {

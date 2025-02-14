@@ -14,7 +14,7 @@
     <input type="text" th:field="*{telefono}" id="telefono">
 	<p> Selecciona a los empleados de esta oficina </p>
 	<div th:each="empleado : ${empleados}">
-	<input type="checkbox" id='${empleado.id}' name="empleadoChecked" value='${empleado.id}'>
+	<input type="checkbox" id='${empleado.id}' name="empleadoChecked" th:value='${empleado.id}'>
 	<label for='${empleado.id}' th:text="${empleado.nombre}"></label><br>
     </div> 
     

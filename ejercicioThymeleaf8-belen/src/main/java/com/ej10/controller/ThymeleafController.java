@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -47,20 +48,15 @@ public class ThymeleafController {
 		serviceEmpl.createOrUpdate(empleado);
 		return "redirect:/empleados"; //redirige a los empleados
 	}
-	//ejercicio 11 y 13
+	//ejercicio 11
 	@GetMapping("/oficinas")
-	public String listarOficinas(@RequestParam (name="verEmpleados", required = false) Integer idOfi,  Model model) {
-		List<Empleado> empleados = new ArrayList<>();
-		
-		if (idOfi != null) {
-			Oficina oficina = serviceOfi.findById(idOfi);
-			empleados = oficina.getEmpleados();
-		}
-		
+	public String listarOficinas(Model model) {
 		List<Oficina> oficinas = serviceOfi.findAll();
 		model.addAttribute("oficinas", oficinas);
+		List<Empleado> empleados = new ArrayList<>();
 		model.addAttribute("empleados", empleados);
-		return "oficina-lista";
+
+		return "oficinas-lista";
 	}
 	
 	//ejercicio 12
@@ -83,4 +79,17 @@ public class ThymeleafController {
 		serviceOfi.createOrUpdate(oficina);
 		return "redirect:/oficinas"; //redirige 
 	}
+	//ejercicio 13
+	@GetMapping("oficinas/{id}")
+	public String verEmpleados(@PathVariable Integer id, Model model) {
+		List<Oficina> oficinas = serviceOfi.findAll();
+		model.addAttribute("oficinas", oficinas);
+		if (id != null) {
+			Oficina oficina = serviceOfi.findById(id);
+			model.addAttribute("empleados", oficina.getEmpleados());
+		}
+
+		return "oficinas-lista";
+	}
+	
 }
