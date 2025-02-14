@@ -13,7 +13,6 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Puesto</th>
-                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +21,6 @@
                 <td th:text="${empleado.nombre}"></td>
                 <td th:text="${empleado.email}"></td>
                 <td th:text="${empleado.puesto}"></td> <!-- Aqui habría que poner un if estado!== null, pues lo imprime, pues imprimir un null da error -->
-                <td><a th:href="@{/empleado-form/{id}(id=${empleado.id})}">Ver</a></td>
             </tr>
         </tbody>
     </table>
