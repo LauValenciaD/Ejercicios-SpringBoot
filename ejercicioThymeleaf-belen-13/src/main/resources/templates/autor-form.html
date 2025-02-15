@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: agregar empleado</h1>
+<form th:action="@{/autor-form}" th:object="${autor}" th:method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="nombre">
+    
+    <button type="submit">Enviar</button>
+    <br>
+    <a href="/autores">Volver</a>
+</form>
+
+</body>
+</html>

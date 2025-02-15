@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: agregar oficina</h1>
+<form th:action="@{/libro-form}" th:object="${libro}" th:method="post">
+    <label for="titulo">Título</label>
+    <input type="text" th:field="*{titulo}" id="titulo">
+
+	<p> Selecciona a los empleados de esta oficina </p>
+	<select  name="autorChecked">
+	<option  th:each="autor : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+	</select>
+    <button type="submit">Enviar</button>
+    <br>
+    <a href="/">Volver</a>
+</form>
+
+</body>
+</html>
