@@ -34,7 +34,7 @@ public class EstudianteService implements EstudianteServInter{
 
 	@Override
 	public List<Estudiante> containsPalabra(String palabra) {
-		List<Estudiante> lista = repo.getAll().stream().filter(t -> t.getNombre().contains(palabra)).toList();
+		List<Estudiante> lista = repo.getAll().stream().filter(t -> t.getNombre().toLowerCase().contains(palabra.toLowerCase())).toList();
 		 return lista;
 	}
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: buscar estudiante</h1>
+<form th:action="@{/estudiantes/buscar}" method="get">
+    <label for="nombre">Nombre</label>
+<!--     usamos th:value para mantener el mismo valor en el input  -->
+    <input type="text" name="nombre" id="nombre" th:value="${nombre}">  
+    <button type="submit">Enviar</button>
+</form>
+<div th:unless="${estudiantes.isEmpty()}">
+<h3>Lista de estudiantes</h3>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>Estudiantes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="estudiante : ${estudiantes}">
+				<td th:text="${estudiante.nombre}"></td>
+				<td
+					th:text="${estudiante.email}"></td>
+				<td>
+					<ul>
+						<li th:each="curso : ${estudiante.cursos}"
+							th:text="${curso.nombre}"></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+<a href="/cursos/listado">Volver a la lista</a>
+
+
+</body>
+</html>

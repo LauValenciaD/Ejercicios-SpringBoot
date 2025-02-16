@@ -43,10 +43,7 @@ public class EjercicioBbdd15Application implements CommandLineRunner{
 	    curso1.addEstudiante(estudiante1);
 	    curso1.addEstudiante(estudiante2);
 	    curso2.addEstudiante(estudiante2);
-	    
-	    estudiante1.getCursos().add(curso1);
-	    estudiante2.getCursos().add(curso2);
-	    estudiante2.getCursos().add(curso1);
+
 
 	    // Persistir cursos (esto también persistirá a los estudiantes debido a la cascada)
 	    cursoServ.insert(curso1);

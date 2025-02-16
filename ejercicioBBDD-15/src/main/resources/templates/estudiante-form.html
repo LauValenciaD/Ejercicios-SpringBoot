@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>estudiantes</title>
+</head>
+<body>
+	<h1>Crear nuevo estudiante</h1>
+	<form th:action="@{/estudiantes/crear}" th:object="${estudiante}"
+		th:method="post">
+		<label for="nombre">Nombre</label> <input type="text"
+			th:field="*{nombre}" id="nombre"> <br> <label
+			for="email">email</label> <input type="text" th:field="*{email}"
+			id="email"> <br>
+		<p>Selecciona los cursos</p>
+		<div th:each="curso : ${cursos}">
+			<input type="radio" id='${curso.id}' name="cursoChecked" th:value='${curso.id}'> 
+			<label for='${curso.id}' th:text="${curso.nombre}"></label><br>
+		</div>
+
+		<button type="submit">Enviar</button>
+	</form>
+
+	<a href="/">Volver</a>
+</body>
+</html>

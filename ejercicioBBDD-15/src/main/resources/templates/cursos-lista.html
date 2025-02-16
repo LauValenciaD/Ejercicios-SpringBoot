@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Lista de cursos</h1>
-	<table>
+	<table border="1">
 		<thead>
 			<tr>
 				<th>Nombre</th>
@@ -16,12 +16,16 @@
 		</thead>
 		<tbody>
 			<tr th:each="curso : ${cursos}">
-				<td th:text=${curso.nombre}></td>
+				<td th:text="${curso.nombre}"></td>
+				<td
+					th:text="${curso.descripcion}"></td>
 				<td>
 					<ul>
-						<li th:each="estudiante : ${curso.estudiantes}" th:text="${estudiante.nombre}"></li>
+						<li th:each="estudiante : ${curso.estudiantes}"
+							th:text="${estudiante.nombre}"></li>
 					</ul>
 				</td>
+			</tr>
 		</tbody>
 	</table>
 	<a href="/">Volver</a>
