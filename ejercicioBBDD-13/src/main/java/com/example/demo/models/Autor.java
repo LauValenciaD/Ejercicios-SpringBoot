@@ -1,7 +1,7 @@
 package com.example.demo.models;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,12 +10,11 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Autor")
+@Table(name = "AutorNuevo")
 public class Autor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,26 +23,24 @@ public class Autor {
 	@Column(name = "nombre", nullable = false, length = 255)
 	private String nombre;
 
-	@OneToMany(mappedBy= "autor")
-	private List <Libro> libros;
+	@OneToMany(mappedBy= "autor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List <Libro> libros= new ArrayList<>();
 
-	public Autor(Integer id, String nombre, List<Libro> libros) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.libros = libros;
-	}
-	
+
 	//constructor sin ID
-	public Autor(String nombre, List<Libro> libros) {
+	public Autor(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.libros = libros;
 	}
 
 
 	public Autor() {
 		super();
+	}
+	
+	public void addLibro(Libro libro) {
+		libros.add(libro);
+		libro.setAutor(this);
 	}
 
 	public Integer getId() {

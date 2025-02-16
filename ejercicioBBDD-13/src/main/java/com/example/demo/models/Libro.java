@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +14,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Libro")
+@Table(name = "LibroNuevo")
 public class Libro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +26,10 @@ public class Libro {
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "libro_id")
 	private Autor autor;
-	public Libro(Integer id, String titulo) {
+	
+
+	public Libro(String titulo) {
 		super();
-		this.id = id;
 		this.titulo = titulo;
 	}
 
@@ -48,6 +51,14 @@ public class Libro {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+	
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 
 	@Override

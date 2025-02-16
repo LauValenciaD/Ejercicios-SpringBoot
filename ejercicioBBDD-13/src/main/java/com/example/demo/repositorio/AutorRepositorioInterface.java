@@ -17,11 +17,8 @@ public interface AutorRepositorioInterface {
 		Autor getId (Integer id);
 		
 		//crear oficina
-		void insert (Autor autor);
-		
-		//actualizar info
-		void actualizar (Autor autor);
-		
+		void save (Autor autor);
+
 		//eliminar autor
 		void delete (Autor autor);
 		
