@@ -1,9 +1,7 @@
-package com.example.demo.model;
+package com.ej15.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -12,45 +10,31 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 
-@Entity
-@Table(name = "Curso3")
+@Entity(name="curso2")
 public class Curso {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 255)
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(name = "descripcion", nullable = false, length = 255)
     private String descripcion;
 
     @ManyToMany(mappedBy = "cursos", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Estudiante> estudiantes = new ArrayList<>();
 
-	public Curso(String nombre, String descripcion) {
-		super();
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-	}
-
-	public Curso() {
-		super();
-	}
-	
     public void addEstudiante(Estudiante estudiante) {
-        if (estudiantes == null) {
-            estudiantes = new ArrayList<>();
-        }
         estudiantes.add(estudiante);
         estudiante.getCursos().add(this);
+    }
+
+    public void removeEstudiante(Estudiante estudiante) {
+        estudiantes.remove(estudiante);
+        estudiante.getCursos().remove(this);
     }
 
 	public Integer getId() {
@@ -69,12 +53,12 @@ public class Curso {
 		this.nombre = nombre;
 	}
 
-	public String getEmail() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setEmail(String email) {
-		this.descripcion = email;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public List<Estudiante> getEstudiantes() {
@@ -84,17 +68,6 @@ public class Curso {
 	public void setEstudiantes(List<Estudiante> estudiantes) {
 		this.estudiantes = estudiantes;
 	}
-	
-	//Para evitar el bucle infinito de ToString
-	@Override
-	public String toString() {
-	    return "Curso{" +
-	            "nombre='" + nombre + '\'' +
-	            ", descripcion='" + descripcion + '\'' +
-	            ", estudiantes=" + estudiantes.stream().map(Estudiante::getNombre).toList() +
-	            '}';
-	}
 
-	
-	
+ 
 }

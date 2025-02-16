@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,36 +17,46 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Estudiante")
+@Table(name = "Estudiante3")
 public class Estudiante {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Integer id;
-	@Column(name = "nombre", nullable = false, length = 255)
-	private String nombre;
-	@Column(name = "email", nullable = false, length = 255)
-	private String email;
-	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "estudiante_curso",
-		joinColumns = {@JoinColumn(name = "id_estudiante") },
-		inverseJoinColumns = {@JoinColumn(name = "id_curso") })
-	//para que no se cree nulo supongo?
-	private List<Curso> cursos = new ArrayList<>();
 
-	public Estudiante(String nombre, String email, List<Curso> cursos) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "nombre", nullable = false, length = 255)
+    private String nombre;
+
+    @Column(name = "email", nullable = false, length = 255)
+    private String email;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "curso_estudiante",
+        joinColumns = @JoinColumn(name = "estudiante_id"),
+        inverseJoinColumns = @JoinColumn(name = "curso_id")
+    )
+    private List<Curso> cursos = new ArrayList<>();
+    
+	public Estudiante(String nombre, String email) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
-		//permite evitar problemas si hay lista o si es null
-		this.cursos = (cursos != null) ? cursos : new ArrayList<>();
 	}
 
 	public Estudiante() {
 		super();
 	}
-
+	
+	  public void addCurso(Curso curso) {
+	        if (cursos == null) {
+	            cursos = new ArrayList<>();
+	        }
+	        cursos.add(curso);
+	        curso.getEstudiantes().add(this);
+	    }
+	
 	public Integer getId() {
 		return id;
 	}

@@ -23,12 +23,15 @@ public class CursoRepositorio implements CursoRepoInterface {
 		return entityManager.find(Curso.class, id);
 	}
 
-	@Override
-	public void insert(Curso curso) {
-		entityManager.persist(curso);
-
-	}
-
+    // Crear o actualizar un curso
+    @Override
+    public void save(Curso curso) {
+        if (curso.getId() == null) {
+            entityManager.persist(curso); // Si el ID es nulo, es un nuevo curso, lo insertamos
+        } else {
+            entityManager.merge(curso); // Si ya existe, lo actualizamos
+        }
+    }
 	@Override
 	public void actualizar(Curso curso) {
 		entityManager.merge(curso);

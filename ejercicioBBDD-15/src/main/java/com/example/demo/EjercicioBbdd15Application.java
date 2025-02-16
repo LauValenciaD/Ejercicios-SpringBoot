@@ -31,44 +31,32 @@ public class EjercicioBbdd15Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		// Crear la lista de estudiantes para los cursos
-        List<Estudiante> estudiantesCurso1 = new ArrayList<>();
-        List<Estudiante> estudiantesCurso2 = new ArrayList<>();
+	    // Crear cursos
+	    Curso curso1 = new Curso("Matemáticas", "Curso avanzado de matemáticas");
+	    Curso curso2 = new Curso("Programación", "Introducción a Java");
 
-        // Crear cursos (vacíos inicialmente)
-        Curso curso1 = new Curso("Matemáticas", "Curso avanzado de matemáticas", estudiantesCurso1);
-        Curso curso2 = new Curso("Programación", "Introducción a Java", estudiantesCurso2);
+	    // Crear estudiantes
+	    Estudiante estudiante1 = new Estudiante("Juan Pérez", "juan.perez@example.com");
+	    Estudiante estudiante2 = new Estudiante("Ana Gómez", "ana.gomez@example.com");
 
-        // Crear la lista de cursos para los estudiantes
-        List<Curso> cursosEstudiante1 = new ArrayList<>(Arrays.asList(curso1, curso2));
-        List<Curso> cursosEstudiante2 = new ArrayList<>(Arrays.asList(curso2));
+	    // Asignar estudiantes a cursos
+	    curso1.addEstudiante(estudiante1);
+	    curso1.addEstudiante(estudiante2);
+	    curso2.addEstudiante(estudiante2);
+	    
+	    estudiante1.getCursos().add(curso1);
+	    estudiante2.getCursos().add(curso2);
+	    estudiante2.getCursos().add(curso1);
 
-        // Crear estudiantes y asignarles los cursos
-        Estudiante estudiante1 = new Estudiante("Juan Pérez", "juan.perez@example.com", cursosEstudiante1);
-        Estudiante estudiante2 = new Estudiante("Ana Gómez", "ana.gomez@example.com", cursosEstudiante2);
-
-        // Agregar estudiantes a los cursos correspondientes
-        curso1.getEstudiantes().add(estudiante1);
-        curso2.getEstudiantes().add(estudiante1);
-        curso2.getEstudiantes().add(estudiante2);
-
-        // Imprimir información
-        System.out.println("Información de los cursos:");
-        System.out.println(curso1);
-        System.out.println(curso2);
-
-        System.out.println("\nInformación de los estudiantes:");
-        System.out.println(estudiante1);
-        System.out.println(estudiante2);
-        
-        //insertar curso
-        cursoServ.insert(curso1);
-        cursoServ.insert(curso2);
+	    // Persistir cursos (esto también persistirá a los estudiantes debido a la cascada)
+	    cursoServ.insert(curso1);
+	    cursoServ.insert(curso2);
+	
         //agregar estudiante a un curso (falta)
         
         //contiene palabra
-        cursoServ.containsPalabra("matemáticas").forEach(curso -> System.out.println(curso));
+        //cursoServ.containsPalabra("matemáticas").forEach(curso -> System.out.println(curso));
         //ver cursos
-        cursoServ.getAll().forEach(curso -> System.out.println(curso));
+        //cursoServ.getAll().forEach(curso -> System.out.println(curso));
 	}
 }

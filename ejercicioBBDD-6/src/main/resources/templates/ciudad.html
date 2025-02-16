@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Formulario: buscar por ciudad</h1>
-<form th:action="@{/clientes/ciudad}" method="post">
+<form th:action="@{/clientes/ciudad}" method="get">
     <label for="ciudad">Ciudad</label>
 <!--     usamos th:value para mantener el mismo valor en el input  -->
     <input type="text" name="ciudad" id="ciudad" th:value="${ciudad}">  

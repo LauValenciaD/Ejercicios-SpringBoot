@@ -16,10 +16,13 @@ public class CursoService implements CursoServInt{
 	@Autowired
 	private CursoRepoInterface repo;
 	
+
+	
 	@Override
 	@Transactional
 	public void insert(Curso curso) {
-		repo.insert(curso);
+
+		repo.save(curso);
 		
 	}
 

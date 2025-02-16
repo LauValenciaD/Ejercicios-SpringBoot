@@ -14,7 +14,7 @@ public interface CursoRepoInterface {
 	Curso getId (Integer id);
 	
 	//crear oficina
-	void insert (Curso curso);
+	void save (Curso curso);
 	
 	//actualizar info
 	void actualizar (Curso curso);

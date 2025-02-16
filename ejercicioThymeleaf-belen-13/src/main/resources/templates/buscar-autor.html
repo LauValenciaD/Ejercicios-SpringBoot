@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Formulario: buscar autor</h1>
+<form th:action="@{/buscar-autor}" method="get">
+    <label for="nombre">Nombre</label>
+<!--     usamos th:value para mantener el mismo valor en el input  -->
+    <input type="text" name="nombre" id="nombre" th:value="${nombre}">  
+    <button type="submit">Enviar</button>
+</form>
+<div th:if="${autores} != null">
+<h3>Lista</h3>
+<ul>
+    <li th:each="autor : ${autores}" th:text="${autor.nombre}"></li>
+</ul>
+<a href="/autores">Volver a la lista</a>
+</div>
+
+</body>
+</html>
