@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cursos</title>
+</head>
+<body>
+	<h1>Lista de cursos</h1>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Clave</th>
+				<th>Valor</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="curso : ${mapa}">
+				<td th:text="${curso.key}"></td>
+				<td
+					th:text="${curso.value}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="/">Volver</a>
+</body>
+</html>

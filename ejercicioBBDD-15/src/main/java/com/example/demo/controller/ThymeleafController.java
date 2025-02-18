@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.Curso;
 import com.example.demo.model.Estudiante;
-import com.example.demo.service.CursoServInt;
+import com.example.demo.service.CursoService;
 import com.example.demo.service.EstudianteServInter;
 
 
@@ -22,7 +23,7 @@ import com.example.demo.service.EstudianteServInter;
 public class ThymeleafController {
 
 	@Autowired
-	private CursoServInt serviceCurso;
+	private CursoService serviceCurso;
 	
 	@Autowired
 	private EstudianteServInter serviceEstudiante;
@@ -71,6 +72,13 @@ public class ThymeleafController {
 			model.addAttribute("nombre", nombre);
 			return "buscar-estudiante"; //redirige a la vista e imprime los estudiantes de la nombre
 		}
+	
+	@GetMapping("/cursos/map")
+	public String mapa(Model model) {
+	Map<Integer, Integer> cursos = serviceCurso.mapaIdCantidad();
+	model.addAttribute("mapa", cursos);
+	return "cursos-map";
+	}
 
 
 }

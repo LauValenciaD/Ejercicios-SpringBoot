@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,6 +75,11 @@ public class CursoService implements CursoServInt{
 		estudiante.getCursos().remove(curso);
 		repo.actualizar(curso); }
 		
+	}
+	
+	public Map<Integer, Integer> mapaIdCantidad() {
+		List<Curso> cursos = repo.getAll();
+		return cursos.stream().collect(Collectors.toMap(Curso::getId, curso -> curso.getEstudiantes().size()));
 	}
 
 }
